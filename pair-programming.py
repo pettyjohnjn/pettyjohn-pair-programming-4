@@ -15,6 +15,7 @@ def convert_to_meters(feet, inches):
     >>> convert_to_meters(np.array([5, 6]), np.array([3, 2]))
     array([1.6002, 1.8796])
     """
+    # Comment: I have a good understanding of what this function does by just reading the documentation. It's good that you included parameters and what data types are accepted. It's good that you included what the function returns and what data type the return is. I also like that you included examples. One thing you could do is included in the description that your return is rounded, but that might not be necessary. ~Emily Pearson
 
     # Assert that feet is an integer, a float, or a numpy array
     assert isinstance(feet, (int, float, np.ndarray)), "feet should be an integer, a float, or a numpy array"
@@ -72,3 +73,27 @@ meters = convert_to_meters(feet, inches)
 # We print out the result in a formatted string
 for i in range(len(feet)):
     print(f"{feet[i]} feet {inches[i]} inches is equal to {meters[i]} meters.")
+
+    
+    
+## Test the function ~Emily Pearson
+print("Tests done by Emily Pearson:")
+#test for integers
+inches = 1  #global variable for inches
+feet = 1  #global variable for feet
+meters = convert_to_meters(inches, feet)  #make variable to store what the function returns
+print(f"{feet} feet {inches} inches is 0.3302 meters. The function returns {meters} meters.")
+
+#test for floats
+inches = 1.5  #global variable for inches
+feet = 1.5  #global variable for feet
+meters = convert_to_meters(inches, feet)  #make variable to store what the function returns
+print(f"{feet} feet {inches} inches is 0.4953 meters. The function returns {meters} meters.")
+
+#test for arrays, using google to check values in meters
+feet = np.array([1,2])  #global variable for feet
+inches = np.array([3,4])  #global variable for inches
+meters = convert_to_meters(feet, inches)  #make variable to store what the function returns
+#make a loop that iterates for each value in the inches array
+for i in range(len(inches)):
+    print(f"The function converts {feet[i]} feet {inches[i]} inches to {meters[i]} meters.")
